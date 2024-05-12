@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FromWhereComponent } from './from-where.component';
+import { FromWhereComponent } from './from-to.component';
 
 describe('FromWhereComponent', () => {
   let component: FromWhereComponent;
@@ -10,8 +10,8 @@ describe('FromWhereComponent', () => {
     await TestBed.configureTestingModule({
       imports: [FromWhereComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(FromWhereComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,1 +1,17 @@
-<p>transport-type works!</p>
+<div class="transportTypeBox">
+    <button class="transportTypeBox__button" mat-icon-button (click)="selectTransport('any')">
+        <mat-icon>open_with</mat-icon>
+    </button>
+    <button class="transportTypeBox__button" mat-icon-button (click)="selectTransport('plane')">
+        <mat-icon>flight</mat-icon>
+    </button>
+    <button class="transportTypeBox__button" mat-icon-button (click)="selectTransport('train')">
+        <mat-icon>train</mat-icon>
+    </button>
+    <button class="transportTypeBox__button" mat-icon-button (click)="selectTransport('suburban')">
+        <mat-icon>directions_railway</mat-icon>
+    </button>
+    <button class="transportTypeBox__button" mat-icon-button (click)="selectTransport('bus')">
+        <mat-icon>directions_bus</mat-icon>
+    </button>
+</div>
