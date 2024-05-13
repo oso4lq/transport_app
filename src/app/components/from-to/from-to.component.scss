@@ -15,3 +15,30 @@
         color: #000;
     }
 }
+
+/* from-to.component.scss */
+
+.suggestions {
+    position: absolute;
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    width: calc(100% - 2px);
+  }
+  
+  .suggestions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .suggestions ul li {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .suggestions ul li:hover {
+    background-color: #f2f2f2;
+  }
+  

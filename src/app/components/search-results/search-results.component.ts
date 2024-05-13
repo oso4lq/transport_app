@@ -16,6 +16,8 @@ export class ResultsComponent {
   @Input() searchResults: any[] = [];
   dataSource = new MatTableDataSource<any>();
 
+  displayedColumns: string[] = ['arrivalTime', 'departureTime']; // Add more column names as needed
+
   constructor() { }
 
   ngOnChanges() {

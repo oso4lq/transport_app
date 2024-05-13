@@ -1,13 +1,17 @@
 <div class="appBox">
-  <div class="inputBox">
-    <app-from-to />
-    <app-transport-type />
-    <app-select-date />
+  <div class="mainBox">
+    <div class="inputBox">
 
-    <button mat-icon-button class="inputBox__button">Search</button>
+      <app-from-to (fromChange)="from = $event" (toChange)="to = $event"></app-from-to>
+      <app-transport-type (transportTypeChange)="transportType = $event"></app-transport-type>
+      <app-select-date (departureDateChange)="departureDate = $event"></app-select-date>
+
+      <button mat-icon-button class="inputBox__button" (click)="searchTransport()">Search</button>
+
+    </div>
+
+    <app-search-results />
   </div>
 
-  <app-search-results />
-
-  <router-outlet />
+  <!-- <router-outlet /> -->
 </div>
