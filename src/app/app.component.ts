@@ -52,18 +52,18 @@ export class AppComponent {
         {
           next: (response: any) => {
             this.searchResults = response.segments;
-            this.loading = false; 
+            this.loading = false;
           },
           error: (err: any) => {
             console.error(err);
             this.loading = false;
             this.error = true;
-            this.errorMessage = 'Something went wrong, please reload the page and try again.';
+            this.errorMessage = 'Что-то пошло не так. Пожалуйста, перезагрузите страницу и попробуйте снова.';
           },
         }
       );
     } else {
-      this.errorMessage = "Please fill in both 'From' and 'To' locations before searching.";
+      this.errorMessage = "Пожалуйста, заполните перед поиском оба поля Откуда и Куда.";
     }
     this.errorTimeout = setTimeout(() => {
       this.error = false;
