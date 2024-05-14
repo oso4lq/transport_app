@@ -7,23 +7,23 @@ import { Observable, map } from 'rxjs';
 })
 
 export class TransportService {
+  // suggestions based on the user input
   private apiURLSuggestions = 'https://suggests.rasp.yandex.net/all_suggests?format=old&part=';
+  // Yandex timetables API
   private apiURLTimetables = 'https://api.rasp.yandex.net/v3.0/';
+  // got from Yandex account
   private apiKey = 'b9ae274a-ab37-4eee-babe-ddf4b7f786c4';
-  private corsProxyUrl = 'https://cors-anywhere.herokuapp.com/'; // CORS proxy URL
+  // CORS proxy URL to prevent browser restrictions on sending API requests
+  private corsProxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
   constructor(private http: HttpClient) { }
 
   getDestinationSuggestions(part: string): Observable<any> {
     const suggestionsUrl = `${this.corsProxyUrl}${this.apiURLSuggestions}${part}`;
     return this.http.get<any>(suggestionsUrl);
-
-    // return this.http.get<any>(`${this.apiURLSuggestions}${part}`);
-    // return this.http.jsonp(`${this.apiURLSuggestions}${part}`, 'callback');
   };
 
   searchTransport(from: string, to: string, transportType: string, date: any): Observable<any> {
-    // Construct query parameters
     let params = new HttpParams()
       .set('apikey', this.apiKey)
       .set('format', 'json')
@@ -32,14 +32,11 @@ export class TransportService {
       .set('lang', 'ru_RU')
       .set('date', date);
 
-    console.log(params);
-
     if (transportType !== 'any') {
       params = params.set('transport_types', transportType);
     };
 
-    // Make API request
-    // return this.http.get<any>(`${this.apiURLTimetables}search/`, { params: params });
     return this.http.get<any>(`${this.corsProxyUrl}${this.apiURLTimetables}search/`, { params: params });
   };
+
 };

@@ -16,7 +16,9 @@ import { MatIconModule } from '@angular/material/icon';
 export class TransportTypeComponent {
   @Output() transportTypeChange = new EventEmitter<string>();
 
+  // set selected data
   changeTransportType(newType: string) {
     this.transportTypeChange.emit(newType);
-  }
-}
+  };
+
+};

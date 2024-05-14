@@ -23,15 +23,15 @@ export class SelectDateComponent implements OnInit {
 
   departureDate: Date | null = new Date(); // date default value
 
+  // set default data as today
   ngOnInit() {
-    console.log('Default date:', this.departureDate);
     if (this.departureDate !== null) {
       this.departureDateChange.emit(this.departureDate);
     }
   };
 
+  // set selected data
   onDateChange(event: any) {
-    console.log('Date selected:', event.value);
     this.departureDateChange.emit(event.value);
   };
 

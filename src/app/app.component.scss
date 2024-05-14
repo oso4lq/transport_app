@@ -1,63 +1,68 @@
 .appBox {
     display: flex;
+    height: 100%;
     justify-content: center;
-    align-items: center;
-    // height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #e0e0e0;
 }
 
 .mainBox {
     width: 80vw;
     display: flex;
     flex-direction: column;
-
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
 }
 
 .inputBox {
-    display: flex;
+    margin-top: 20px;
+    display: grid;
+    grid-template-rows: auto auto;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     background-color: #fff;
-    padding: 40px;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 40px;
+    border-bottom: 4px solid #e0e0e0;
+
+    &__title {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
 
     &__selectors {
-        display: flex;
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
         justify-content: center;
         align-items: center;
-        gap: 20px;
+        background-color: #ededed;
+        border-radius: 10px;
     }
 
     &__button {
-        background: #a0a0a0;
+        height: 100%;
+        background: #800080;
         font-size: 20px;
-        border: #000;
-        color: #000;
-        width: 120px;
-        height: 50px;
+        border: none;
+        color: #ededed;
+        width: 100%;
         border-radius: 10px;
         font-size: 24px;
     }
 }
 
 .searchResults {
-    height: 50px;
     font-size: 20px;
-    background: #a0a0a0;
+    background: #ededed;
+    margin: 10px 20px;
+    padding: 20px 20px;
+    border-radius: 10px;
+    overflow: auto;
 
-    &__header {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 10% 30% 25% 10% 25%;
-        /* Adjust percentages here */
-        align-items: end;
-        justify-items: center;
-    }
+    &__message {
+        margin: 10px 0px;
 
-    &__title {
-        padding: 14px 0px 0px 0px;
+        &_error {
+            color: #cc3300;
+        }
     }
 }

@@ -1,37 +1,18 @@
 .selectDate {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    flex-direction: row;
 
-    &__label {
-        margin-right: 10px;
-    }
-
-    &__dateBox {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+    .selectDate__input {
+        text-align: center;
         padding: 5px;
-        // width: 100%;
-        // width: 150px;
-    }
-
-    &__input {
-        // width: 30%;
-        display: flex;
-        justify-content: center;
-        width: 100px;
-        height: 50px;
+        margin-left: 10px;
+        min-width: 100px;
+        width: 50%;
         border-radius: 10px;
         font-size: 20px;
     }
-}
 
-.mat-datepicker-toggle {
-    color: black;
+    .custom-datepicker-toggle {
+        color: #800080;
+    }
 }

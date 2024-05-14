@@ -1,30 +1,33 @@
 <div class="appBox">
   <div class="mainBox">
-    <div class="inputBox">
 
+    <div class="inputBox">
+      <h1 class="inputBox__title">Where do you want to go today?</h1>
       <app-from-to (fromChange)="from = $event" (toChange)="to = $event"></app-from-to>
       <div class="inputBox__selectors">
-        <app-transport-type (transportTypeChange)="transportType = $event"></app-transport-type>
         <app-select-date (departureDateChange)="departureDate = $event"></app-select-date>
+        <app-transport-type (transportTypeChange)="transportType = $event"></app-transport-type>
         <button mat-icon-button class="inputBox__button" (click)="searchTransport()">Search</button>
       </div>
-
     </div>
 
+    <app-search-header />
+
     <div class="searchResults">
-
-      <div class="searchResults__header">
-        <div class="searchResults__title">Transport</div>
-        <div class="searchResults__title">Route</div>
-        <div class="searchResults__title">From</div>
-        <div class="searchResults__title">Duration</div>
-        <div class="searchResults__title">To</div>
+      <!-- default message -->
+      <div class="searchResults__message" *ngIf="searchResults.length === 0 && !loading && !error && !errorMessage">
+        Start searching to display available routes to plan your journey!</div>
+      <!-- loading message -->
+      <div class="searchResults__message" *ngIf="loading">Loading the routes. Please wait...</div>
+      <!-- error message -->
+      <div class="searchResults__message searchResults__message_error" *ngIf="error">Something went wrong, please reload
+        the page and try again.
       </div>
-
+      <div class="searchResults__message searchResults__message_error" *ngIf="errorMessage">{{
+        errorMessage }}</div>
+      <!-- search results -->
       <app-search-results [searchResults]="searchResults" />
     </div>
 
   </div>
-
-  <!-- <router-outlet /> -->
 </div>
