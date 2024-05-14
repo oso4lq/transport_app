@@ -1,9 +1,9 @@
-<div class="selectDate">
-    <label for="selectDate__label">Departure date:</label>
-    <div class="selectDate__dateBox">
-        <input name="departure" class="selectDate__input" matInput [matDatepicker]="picker" placeholder="Choose a date"
-            [(ngModel)]="departureDate" (dateChange)="onDateChange($event)">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </div>
+<!-- <div class="selectDate"> -->
+<!-- <label for="selectDate__label">Departure date:</label> -->
+<div class="selectDate__dateBox">
+    <input name="departure" class="selectDate__input" matInput [matDatepicker]="picker" placeholder="Choose a date"
+        [(ngModel)]="departureDate" (dateChange)="onDateChange($event)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
 </div>
+<!-- </div> -->

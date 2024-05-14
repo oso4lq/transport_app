@@ -2,13 +2,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    // height: 100vh;
     background-color: #f0f0f0;
 }
 
 .mainBox {
+    width: 80vw;
     display: flex;
-    
+    flex-direction: column;
+
 }
 
 .inputBox {
@@ -22,6 +24,13 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
+    &__selectors {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
     &__button {
         background: #a0a0a0;
         font-size: 20px;
@@ -31,5 +40,24 @@
         height: 50px;
         border-radius: 10px;
         font-size: 24px;
+    }
+}
+
+.searchResults {
+    height: 50px;
+    font-size: 20px;
+    background: #a0a0a0;
+
+    &__header {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 10% 30% 25% 10% 25%;
+        /* Adjust percentages here */
+        align-items: end;
+        justify-items: center;
+    }
+
+    &__title {
+        padding: 14px 0px 0px 0px;
     }
 }

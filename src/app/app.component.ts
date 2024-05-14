@@ -33,11 +33,11 @@ export class AppComponent {
   transportType: string = 'any';
   // departureDate: string = '';
   departureDate: Date | null = null; // Change the type to Date or null
+  searchResults: any[] = []; // Declare the property here
 
   constructor(private transportService: TransportService) { }
 
   searchTransport() {
-    // Check if both "from" and "to" inputs are filled
     if (this.from && this.to) {
       console.log(this.from);
       console.log(this.to);
@@ -49,6 +49,7 @@ export class AppComponent {
         .subscribe(response => {
           // Handle the response from the API here
           console.log(response);
+          this.searchResults = response.segments;
         });
     } else {
       console.log("Please fill in both 'From' and 'To' locations before searching.");

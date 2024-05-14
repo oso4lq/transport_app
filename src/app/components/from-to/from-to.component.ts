@@ -34,12 +34,12 @@ export class FromToComponent {
   constructor(private transportService: TransportService) { }
 
   onFromInput(event: any) {
-    // this.fetchSuggestions(event.target.value, 'from');
+    this.fetchSuggestions(event.target.value, 'from');
     this.fromChange.emit(event.target.value);
   };
 
   onToInput(event: any) {
-    // this.fetchSuggestions(event.target.value, 'to');
+    this.fetchSuggestions(event.target.value, 'to');
     this.toChange.emit(event.target.value);
   };
 
@@ -62,14 +62,16 @@ export class FromToComponent {
     }
   };
 
-  selectSuggestion(suggestion: string, type: 'from' | 'to') {
+  selectSuggestion(suggestion: any, type: 'from' | 'to') {
+    const destinationCode = suggestion[0]; // Extracting the destination code
+    const destinationString = suggestion[2]; // Extracting the destination string
     if (type === 'from') {
-      this.from = suggestion;
-      this.fromChange.emit(this.from);
+      this.from = destinationString;
+      this.fromChange.emit(destinationCode);
       this.fromSuggestions = [];
     } else {
-      this.to = suggestion;
-      this.toChange.emit(this.to);
+      this.to = destinationString;
+      this.toChange.emit(destinationCode);
       this.toSuggestions = [];
     }
   };

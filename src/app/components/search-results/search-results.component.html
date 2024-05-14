@@ -1,34 +1,72 @@
-<!-- <table mat-table [dataSource]="dataSource">
+<div class="searchResults">
+  <!-- <div class="searchResults__header"></div> -->
+  <div class="searchResults__grid" *ngFor="let result of searchResults">
 
-    <ng-container matColumnDef="arrivalTime">
-        <th mat-header-cell *matHeaderCellDef> Arrival Time </th>
-        <td mat-cell *matCellDef="let element"> {{ element.arrivalTime }} </td>
-    </ng-container>
-    <ng-container matColumnDef="departureTime">
-        <th mat-header-cell *matHeaderCellDef> Departure Time </th>
-        <td mat-cell *matCellDef="let element"> {{ element.departureTime }} </td>
-    </ng-container>
+    <div class="searchResults__transport">{{ result.thread.transport_type }}</div>
+    <div class="searchResults__title">{{ result.thread.title }}</div>
 
+    <div class="searchResults__point">
+      <div class="searchResults__date">{{ result.departure | date: 'mediumTime' }}</div>
+      <div class="searchResults__from">{{ result.from.title }}</div>
+    </div>
+
+    <div class="searchResults__duration">{{ (result.duration / 60) | number: '1.0-0' }} minutes</div>
+
+    <div class="searchResults__point">
+      <div class="searchResults__date">{{ result.arrival | date: 'mediumTime' }}</div>
+      <div class="searchResults__to">{{ result.to.title }}</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 
+<table mat-table [dataSource]="dataSource">
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> Route Title </th>
+    <div mat-cell *matCellDef="let element"> {{ element.thread.title }} </div>
+  </ng-container>
+
+  <ng-container matColumnDef="transport_type">
+    <th mat-header-cell *matHeaderCellDef> Transport Type </th>
+    <td mat-cell *matCellDef="let element"> {{ element.thread.transport_type }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="from">
+    <th mat-header-cell *matHeaderCellDef> From </th>
+    <td mat-cell *matCellDef="let element"> {{ element.from.title }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="to">
+    <th mat-header-cell *matHeaderCellDef> To </th>
+    <td mat-cell *matCellDef="let element"> {{ element.to.title }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="duration">
+    <th mat-header-cell *matHeaderCellDef> Duration </th>
+    <td mat-cell *matCellDef="let element"> {{ element.duration / 60 | number: '1.0-0' }} minutes </td>
+  </ng-container>
+
+  <ng-container matColumnDef="departure">
+    <th mat-header-cell *matHeaderCellDef> Departure Time </th>
+    <td mat-cell *matCellDef="let element"> {{ element.departure | date: 'mediumTime' }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="arrival">
+    <th mat-header-cell *matHeaderCellDef> Arrival Time </th>
+    <td mat-cell *matCellDef="let element"> {{ element.arrival | date: 'mediumTime' }} </td>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </table> -->
 
 
-<table mat-table [dataSource]="dataSource">
 
-    <!-- Define column headers -->
-    <ng-container matColumnDef="arrivalTime">
-      <th mat-header-cell *matHeaderCellDef> Arrival Time </th>
-      <td mat-cell *matCellDef="let element"> {{ element.arrivalTime }} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="departureTime">
-      <th mat-header-cell *matHeaderCellDef> Departure Time </th>
-      <td mat-cell *matCellDef="let element"> {{ element.departureTime }} </td>
-    </ng-container>
-  
-    <!-- Define header row -->
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  
-    <!-- Define row -->
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </table>
-  
+
+<!-- <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> Price </th>
+    <td mat-cell *matCellDef="let element"> {{ element.tickets_info.places[0].price.whole }}.{{
+      element.tickets_info.places[0].price.cents }} {{ element.tickets_info.places[0].currency }} </td>
+  </ng-container> -->

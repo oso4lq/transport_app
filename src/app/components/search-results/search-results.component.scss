@@ -1,0 +1,28 @@
+.searchResults {
+    display: flex;
+    flex-direction: column;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 10% 30% 25% 10% 25%;
+        /* Adjust percentages here */
+        align-items: end;
+        justify-items: center;
+    }
+
+    &__transport {}
+
+    &__title {}
+
+    &__point {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__date {}
+
+    &__from {}
+
+    &__to {}
+}

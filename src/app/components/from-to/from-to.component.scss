@@ -1,44 +1,56 @@
 .fromToBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  // flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
 
-    &__input {
-        width: 100%;
-        height: 50px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 0 10px;
-        font-size: 20px;
-        color: #000;
-    }
+  &__field {
+    min-width: 400px;
+    width: 50%;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  &__input {
+    height: 100%;
+  }
 }
 
 /* from-to.component.scss */
 
 .suggestions {
-    position: absolute;
-    z-index: 1000;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-top: none;
-    width: calc(100% - 2px);
-  }
-  
-  .suggestions ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .suggestions ul li {
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .suggestions ul li:hover {
-    background-color: #f2f2f2;
-  }
-  
+  min-width: 300px;
+  // width: calc(100% - 2px);
+
+  position: absolute;
+  z-index: 1000;
+  background-color: #000000;
+  border: 1px solid #ccc;
+  border-top: none;
+
+  &__item {}
+}
+
+
+//   .suggestions ul {
+//     list-style: none;
+//     padding: 0;
+//     margin: 0;
+//   }
+
+//   .suggestions ul li {
+//     padding: 5px 10px;
+//     cursor: pointer;
+//   }
+
+//   .suggestions ul li:hover {
+//     background-color: #f2f2f2;
+//   }
+
+// .mat-list-item {
+//   color: #000;
+// }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +10,15 @@ export class TransportService {
   private apiURLSuggestions = 'https://suggests.rasp.yandex.net/all_suggests?format=old&part=';
   private apiURLTimetables = 'https://api.rasp.yandex.net/v3.0/';
   private apiKey = 'b9ae274a-ab37-4eee-babe-ddf4b7f786c4';
+  private corsProxyUrl = 'https://cors-anywhere.herokuapp.com/'; // CORS proxy URL
 
   constructor(private http: HttpClient) { }
 
   getDestinationSuggestions(part: string): Observable<any> {
-    return this.http.get<any>(`${this.apiURLSuggestions}${part}`);
+    const suggestionsUrl = `${this.corsProxyUrl}${this.apiURLSuggestions}${part}`;
+    return this.http.get<any>(suggestionsUrl);
+
+    // return this.http.get<any>(`${this.apiURLSuggestions}${part}`);
     // return this.http.jsonp(`${this.apiURLSuggestions}${part}`, 'callback');
   };
 
@@ -35,6 +39,7 @@ export class TransportService {
     };
 
     // Make API request
-    return this.http.get<any>(`${this.apiURLTimetables}search/`, { params: params });
+    // return this.http.get<any>(`${this.apiURLTimetables}search/`, { params: params });
+    return this.http.get<any>(`${this.corsProxyUrl}${this.apiURLTimetables}search/`, { params: params });
   };
 };

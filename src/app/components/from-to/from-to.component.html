@@ -32,28 +32,24 @@
 <!-- from-to.component.html -->
 
 <div class="fromToBox">
-  <mat-form-field>
+  <mat-form-field class="fromToBox__field">
     <input class="fromToBox__input fromToBox__input_from" matInput placeholder="From" [(ngModel)]="from"
       (input)="onFromInput($event)">
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field class="fromToBox__field">
     <input class="fromToBox__input fromToBox__input_to" matInput placeholder="To" [(ngModel)]="to"
       (input)="onToInput($event)">
   </mat-form-field>
 </div>
 
 <!-- Suggestions dropdown -->
-<div class="suggestions" *ngIf="fromSuggestions.length > 0">
-  <mat-list>
-    <mat-list-item *ngFor="let suggestion of fromSuggestions" (click)="selectSuggestion(suggestion, 'from')">
-      {{ suggestion[1] }}
+<div *ngIf="fromSuggestions.length > 0 || toSuggestions.length > 0">
+  <mat-list class="suggestions">
+    <mat-list-item class="suggestions__item" *ngFor="let suggestion of fromSuggestions" (click)="selectSuggestion(suggestion, 'from')">
+      {{ suggestion[2] }}
     </mat-list-item>
-  </mat-list>
-</div>
-<div class="suggestions" *ngIf="toSuggestions.length > 0">
-  <mat-list>
-    <mat-list-item *ngFor="let suggestion of toSuggestions" (click)="selectSuggestion(suggestion, 'to')">
-      {{ suggestion[1] }}
+    <mat-list-item class="suggestions__item" *ngFor="let suggestion of toSuggestions" (click)="selectSuggestion(suggestion, 'to')">
+      {{ suggestion[2] }}
     </mat-list-item>
   </mat-list>
 </div>
