@@ -14,7 +14,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatDatepickerModule,
   ],
   providers: [
-    { provide: MAT_DATE_LOCALE, useValue: 'ru-RU' }
+    { provide: MAT_DATE_LOCALE, useValue: 'eng-US' }
   ],
   templateUrl: './select-date.component.html',
   styleUrl: './select-date.component.scss'
@@ -28,7 +28,7 @@ export class SelectDateComponent implements OnInit {
 
   // set locale
   constructor(private dateAdapter: DateAdapter<Date>) {
-    this.dateAdapter.setLocale('ru');
+    this.dateAdapter.setLocale('eng');
   }
 
   // set default data as today
