@@ -6,6 +6,11 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root'
 })
 
+// IMPORTANT
+// A proxy server https://cors-anywhere.herokuapp.com/ is used to avoid browser CORS restrictions.
+// To enable it, go to DevTools/Network, fill the app inputs and make an API request.
+// Then, find the bad request, open it and click the button to enable using this proxy for developing purposes.
+
 export class TransportService {
   // suggestions based on the user input
   private apiURLSuggestions = 'https://suggests.rasp.yandex.net/all_suggests?format=old&part=';
