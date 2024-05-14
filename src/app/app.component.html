@@ -2,12 +2,12 @@
   <div class="mainBox">
 
     <div class="inputBox">
-      <h1 class="inputBox__title">Where do you want to go today?</h1>
+      <h1 class="inputBox__title">Куда вы отправитесь сегодня?</h1>
       <app-from-to (fromChange)="from = $event" (toChange)="to = $event"></app-from-to>
       <div class="inputBox__selectors">
         <app-select-date (departureDateChange)="departureDate = $event"></app-select-date>
         <app-transport-type (transportTypeChange)="transportType = $event"></app-transport-type>
-        <button mat-icon-button class="inputBox__button" (click)="searchTransport()">Search</button>
+        <button mat-icon-button class="inputBox__button" (click)="searchTransport()">Искать</button>
       </div>
     </div>
 
@@ -16,12 +16,12 @@
     <div class="searchResults">
       <!-- default message -->
       <div class="searchResults__message" *ngIf="searchResults.length === 0 && !loading && !error && !errorMessage">
-        Start searching to display available routes to plan your journey!</div>
+        Начните поиск, чтобы найти доступные маршруты и спланировать путешествие!</div>
       <!-- loading message -->
-      <div class="searchResults__message" *ngIf="loading">Loading the routes. Please wait...</div>
+      <div class="searchResults__message" *ngIf="loading">Маршруты загружаются. Пожалуйста, подождите...</div>
       <!-- error message -->
-      <div class="searchResults__message searchResults__message_error" *ngIf="error">Something went wrong, please reload
-        the page and try again.
+      <div class="searchResults__message searchResults__message_error" *ngIf="error">Что-то пошло не так. Пожалуйста,
+        перезагрузите страницу и попробуйте снова.
       </div>
       <div class="searchResults__message searchResults__message_error" *ngIf="errorMessage">{{
         errorMessage }}</div>

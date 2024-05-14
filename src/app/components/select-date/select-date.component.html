@@ -1,5 +1,5 @@
 <div class="selectDate">
-    <input name="departure" class="selectDate__input" matInput [matDatepicker]="picker" placeholder="Choose a date"
+    <input name="departure" class="selectDate__input" matInput [matDatepicker]="picker" placeholder="Выберите дату"
         [(ngModel)]="departureDate" (dateChange)="onDateChange($event)">
     <mat-datepicker-toggle matSuffix [for]="picker" class="custom-datepicker-toggle"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>

@@ -9,10 +9,24 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #800080;
+        background: #ededed;
         width: 50px;
         height: 50px;
         font-size: 20px;
-        color: #ededed;
+        color: #800080;
+        border-radius: 50%;
+
+        border: 2px solid #800080;
+        transition: background-color 0.3s, border-color 0.3s;
+
+        &.selected {
+            background: #800080;
+            color: #ededed;
+        }
+
+        &:hover {
+            background: #800080;
+            color: #ededed;
+        }
     }
 }
